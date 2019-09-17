@@ -1,0 +1,9 @@
+            .navbar {list-style:none; background-color:black;overflow:hidden;padding:0px;}
+            .navbar a, .dropdown div {text-decoration:none; color:white; font-size:24px; padding:16px; display:inline-block;}
+            .navbar li {float:left;}
+            * {padding:0; margin:0; list-style:none;font-family: Indie Flower;}
+            .navbar li:hover {background-color:pink;}
+            .dropdown-content li {float:none;}
+            .dropdown-content {padding:0; display:none; position:absolute; z-index:100; background-color:black;}
+            .dropdown:hover .dropdown-content{display:block}
+            .active {background-color:pink;}
