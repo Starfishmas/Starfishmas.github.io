@@ -1,14 +1,52 @@
-            .navbar {list-style:none; background-color:black;overflow:hidden;padding:0px;}
-            .navbar a, .dropdown div {text-decoration:none; color:white; font-size:24px; padding:16px; display:inline-block;}
-            .navbar li {float:left;}
-            * {padding:0; margin:0; list-style:none;font-family: Indie Flower;}
-            .navbar li:hover {background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
-            .dropdown-content li {float:none;}
-            .dropdown-content {padding:0; display:none; position:absolute; z-index:100; background-color:black;}
-            .dropdown:hover .dropdown-content{display:block}
-            .active {background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
-            body {background-image: url("https://photo2.foodgawker.com/wp-content/uploads/2017/05/2977161.jpg");}
-            .center {text-align-last: center;}
-            .left {float:left;}
-            .right {float:right;}
-            #grad {}
+            .navbar {
+                list-style:none;
+                 background-color:black;
+                 overflow:hidden;
+                 padding:0px;}
+
+            .navbar a, .dropdown div {
+                text-decoration:none;
+                 color:white;
+                  font-size:24px;
+                   padding:16px;
+                    display:inline-block;}
+
+            .navbar li {
+                float:left;}
+
+            * {
+                padding:0;
+                 margin:0;
+                list-style:none;
+                font-family: Indie Flower;}
+
+            .navbar li:hover {
+                background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
+
+            .dropdown-content li {
+                float:none;}
+            .dropdown-content {
+                padding:0;
+                display:none;
+                position:absolute;
+                z-index:100;
+                background-color:black;}
+
+            .dropdown:hover .dropdown-content{
+                display:block}
+
+            .active {
+                background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
+
+            body {
+                background-image: url("images/bread.jpg");
+            }
+
+            .center {
+                text-align-last: center;}
+
+            .left {
+                float:left;}
+
+            .right {
+                float:right;}
