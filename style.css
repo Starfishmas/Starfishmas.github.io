@@ -39,7 +39,7 @@
                 background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
 
             body {
-                background-image: url("images/bread.jpg");
+                background-image: url("images/glaciercubes.jpg");
             }
 
             .center {
@@ -53,3 +53,9 @@
             .right {
                 float:right;
                 }
+
+            img {
+                max-width: 300px;
+                max-height: 580px;
+                height: 580px;
+                width:300px;}
