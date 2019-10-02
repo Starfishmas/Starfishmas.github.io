@@ -44,6 +44,9 @@
 
             .center {
                 text-align-last: center;
+                display: block;
+                padding-left:25%;
+                padding-right:25%;
                 }
 
             .left {
@@ -59,4 +62,8 @@
                 max-height: 580px;
                 height: 580px;
                 width:300px;
-                padding:16px;}
+                padding:0px;}
+
+            table, th, td {
+                border: 6px solid cyan;
+                }
