@@ -9,7 +9,8 @@
                  color:white;
                   font-size:24px;
                    padding:16px;
-                    display:inline-block;}
+                    display:inline-block;
+                    list-style:none;}
 
             .navbar li {
                 float:left;}
@@ -17,14 +18,14 @@
             * {
                 padding:0;
                  margin:0;
-                list-style:none;
                 font-family: Indie Flower;}
 
             .navbar li:hover {
                 background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
 
             .dropdown-content li {
-                float:none;}
+                float:none;
+                list-style:none;}
             .dropdown-content {
                 padding:0;
                 display:none;
@@ -33,7 +34,8 @@
                 background-color:black;}
 
             .dropdown:hover .dropdown-content{
-                display:block}
+                display:block;
+                list-style:none;}
 
             .active {
                 background-image: linear-gradient(#17b3ab, #560a6b, #ff4400);}
@@ -67,3 +69,9 @@
             table, th, td {
                 border: 6px solid cyan;
                 }
+
+            .text {font-size: 24px;
+            text-align: center;}
+
+            .contact {font: size 24px;
+            font-weight: bold;}
