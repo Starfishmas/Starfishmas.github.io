@@ -2,6 +2,26 @@
 <html>
     <head>
         <title>Text Adventure</title>
+    <style>
+        #container{
+            position: absolute;
+            top: 67px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-color: green;
+        }
+        #leftpane {
+            width: 56%;
+            height: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:red;
+        }
+    </style>
+        <title>Text Adventure</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Indie+Flower" />
     </head>
@@ -21,8 +41,11 @@
         </li>
 
     </ul>
-
-<h1 class="center">Text Adventure</h1>
-
+<div id='container'>
+    <div id='leftpane'>
+    </div>
+    <div id='rightpane'>
+    </div>
+</div>
 </body>
 </html>
