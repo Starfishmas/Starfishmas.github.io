@@ -87,45 +87,132 @@
     </div>
     <div id='rightpane'>
         <div id='storytext'>
-        <p id='ptext1'>This is a test</p>
-        <p id='ptext2'>This is a test</p>
-        <p id='ptext3'>This is a test </p>
-        <p id='ptext4'>This is a test</p>
+        <p id='ptext1'></p>
+        <p id='ptext2'></p>
+        <p id='ptext3'></p>
+        <p id='ptext4'></p>
         </div>
         <div id='choices'>
-            <a id='b1'href="#"> Choice 1</a>
-             <a id='b2'href="#"> Choice 2</a>
-              <a id='b3'href="#"> Choice 3</a>
-               <a id='b4'href="#"> Choice 4</a>
+            <a id='b1' onclick= "bclick(1)" href="#"> Choice 1</a>
+             <a id='b2' onclick = "bclick(2)" href="#"> Choice 2</a>
+              <a id='b3' onclick= "bclick(3)" href="#"> Choice 3</a>
+               <a id='b4' onclick= "bclick(4)" href="#"> Choice 4</a>
         </div>
     </div>
 </div>
-
 <script>
     var pic = document.getElementById('storyimg');
-    var ptext1 = docment.getElementById('ptext1');
-    var ptext2 = docment.getElementById('ptext2');
-    var ptext3 = docment.getElementById('ptext3');
-    var ptext4 = docment.getElementById('ptext4');
+    var ptext1 = document.getElementById('ptext1');
+    var ptext2 = document.getElementById('ptext2');
+    var ptext3 = document.getElementById('ptext3');
+    var ptext4 = document.getElementById('ptext4');
     var b1 = document.getElementById('b1');
     var b2 = document.getElementById('b2');
     var b3 = document.getElementById('b3');
     var b4 = document.getElementById('b4');
     var state = "intro";
+    intro();
 
     function intro(){
-        pic src = "images/";
-        ptext1.innerHTML("This is the intro to my story");
-        ptext2.innerHTML("");
-        ptext3.innerHTML("");
-        ptext4.innerHTML("");
-        b1.innerHTML("yes");
-        b2.innerHTML("no");
+        pic.src = "images/woods.jpg";
+        ptext1.innerHTML = "Please choose your class";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Samurai";
+        b2.innerHTML = "Farmer";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";        
+    }
+
+    function introSamurai(){
+        pic.src = "images/samurai.jpg";
+        ptext1.innerHTML = "Your name is Joe, an unemployed citizen living in the streets of a town in feudal Japan. The town you live in is a small village surrounded by forest, with the Emperor’s palace just beyond the mountains. There is a small town square and marketplace on the right side of the town, with the left side littered with small homes for peasants and merchants and such."; 
+        ptext2.innerHTML = "Farmers and samurai travel up and down the dirt-paved roads, warily on guard as if there were some sort of unforeseen threat lurking in the shadows. You too were once a mighty samurai, but false accusations of mutiny caused you to lose your status and now you’re just trying to scrape up enough money for survival.";
+        ptext3.innerHTML = "One day, you see a flyer with a bounty of 20,000 yen, enough to get you well on your way back to a steady career. The bounty’s for a group called the Boomer Gang; you’ve heard of them before, and they’re not a group that should be taken lightly.";
+        ptext4.innerHTML = "This definitely seems like a job for you; you are a samurai, after all. Will you accept thte bounty?";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b3.innerHTML = "";
         b1.style.display = "block";
         b2.style.display = "block";
         b3.style.display = "none";
         b4.style.display = "none";
     }
+
+    function introFarmer(){
+        pic.src = "images/farmer.jpg";
+        ptext1.innerHTML = "Your name is Joe, an unemployed citizen living in the streets of a town in feudal Japan. The town you live in is a small village surrounded by forest, with the Emperor’s palace just beyond the mountains. There is a small town square and marketplace on the right side of the town, with the left side littered with small homes for peasants and merchants and such."; 
+        ptext2.innerHTML = "Farmers and samurai travel up and down the dirt-paved roads, warily on guard as if there were some sort of unforeseen threat lurking in the shadows. You too were once a rice farmer, but the uniquely harsh winter has made your work impossible and now you’re just trying to scrape up enough money for survival";
+        ptext3.innerHTML = "One day, you see a flyer with a bounty of 20,000 yen, enough to get you well on your way back to a steady career. The bounty’s for a group called the Boomer Gang; you’ve heard of them before, and they’re not a group that should be taken lightly.";
+        ptext4.innerHTML = "You aren’t the most equipped for this sort of job, seeing as you’re a farmer, but you really need the money. Will you accept thte bounty?";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function enterTown(){
+        pic.src = "images/introTown.jpg";
+        ptext1.innerHTML = "You are in the small feudal town. To the right side you find a marketplace and town square. To the left is a series of small homes for peasants and aspiring merchants";
+        ptext2.innerHTML = "Where would you like to search for clues?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Marketplace and Town Square";
+        b2.innerHTML = "Series of Houses";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function additionalConfirmation(){
+        pic.src = "images/something.jpg";
+        ptext1.innerHTML = "Are you sure you don't want to accept the bounty?";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    //state machine
+    function bclick(button){
+        if(state == "intro"){
+            if (button == 1){
+                introSamurai();
+                state = "introSamurai";
+            }
+            else if(button == 2){
+                introFarmer();
+                state = "introFarmer";
+            }
+        }
+        return false;
+
+        if(state == "introSamurai"){
+            if (button == 1){
+                enterTown();
+                state = "enterTown";
+            }
+            else if(button == 2){
+                additionalConfirmation();
+                state = "additionalConfirmation";
+            }
+        }
+        return false;
+    }
+
+
 </script>
 </body>
 </html>
