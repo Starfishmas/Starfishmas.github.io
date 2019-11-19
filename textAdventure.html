@@ -157,7 +157,7 @@
         b4.style.display = "none";
     }
 
-    function enterTown(){
+    function entertownSamurai(){
         pic.src = "images/introTown.jpg";
         ptext1.innerHTML = "You are in the small feudal town. To the right side you find a marketplace and town square. To the left is a series of small homes for peasants and aspiring merchants";
         ptext2.innerHTML = "Where would you like to search for clues?";
@@ -171,7 +171,21 @@
         b4.style.display = "none";
     }
 
-    function additionalConfirmation(){
+    function entertownFarmer(){
+        pic.src = "images/introTown.jpg";
+        ptext1.innerHTML = "You are in the small feudal town. To the right side you find a marketplace and town square. To the left is a series of small homes for peasants and aspiring merchants";
+        ptext2.innerHTML = "Where would you like to search for clues?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Marketplace and Town Square";
+        b2.innerHTML = "Series of Houses";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function additionalconfirmationSamurai(){
         pic.src = "images/something.jpg";
         ptext1.innerHTML = "Are you sure you don't want to accept the bounty?";
         ptext2.innerHTML = "";
@@ -182,6 +196,93 @@
         b1.style.display = "block";
         b2.style.display = "block";
         b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function additionalconfirmationFarmer(){
+        pic.src = "images/something.jpg";
+        ptext1.innerHTML = "Are you sure you don't want to accept the bounty?";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function kidnappedSamurai(){
+        pic.src = "images/jail.jpg";
+        ptext1.innerHTML = "You have been kidnapped by Boomer Gang.";
+        ptext2.innerHTML = "How do you plan on escaping?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+    }
+
+    function kidnappedFarmer(){
+        pic.src = "images/jail.jpg";
+        ptext1.innerHTML = "You have been kidnapped by Boomer Gang.";
+        ptext2.innerHTML = "How do you plan on escaping?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+    }
+
+    function townsquareSamurai(){
+        pic.src = "images/square.jpg";
+        ptext1.innerHTML = "You arrive in the town and spot a suspcious looking man that you follow to a back alleyway. You confront him and it appears he is a member of Boomer Gang.";
+        ptext2.innerHTML = "What do you do?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function townsquareFarmer(){
+        pic.src = "images/square.jpg";
+        ptext1.innerHTML = "You arrive in the town and spot a suspcious looking man that you follow to a back alleyway. You confront him and it appears he is a member of Boomer Gang.";
+        ptext2.innerHTML = "What do you do?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+    }
+
+    function housesSamurai(){
+        pic.src = "images/houses.jpg";
+        ptext1.innerHTML = "There is a series of houses";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "";
+        b3.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
         b4.style.display = "none";
     }
 
@@ -200,16 +301,43 @@
 
         else if(state == "introSamurai"){
             if (button == 1){
-                enterTown();
-                state = "enterTown";
+                entertownSamurai();
+                state = "entertownSamurai";
             }
             else if(button == 2){
-                additionalConfirmation();
-                state = "additionalConfirmation";
+                additionalconfirmationSamurai();
+                state = "additionalconfirmationSamurai";
             }
         }
-        else if (state == ""){
-            
+        else if (state == "introFarmer"){
+            if (button == 1){
+                enterTown();
+                state = "entertownFarmer";
+            }
+            else if(button == 2){
+                additionalconfirmationFarmer();
+                state = "additionalconfirmationFarmer";
+            }
+        }
+        else if (state == "additionalconfirmationSamurai"){
+            if (button == 1){
+                kidnappedSamurai();
+                state = "kidnappedSamurai";
+            }
+            else if(button == 2){
+                entertownSamurai();
+                state = "entertownSamurai";
+            }
+        }
+        else if (state == "entertownSamurai"){
+            if (button == 1){
+                townsquareSamurai();
+                state = "townsquareSamurai";
+            }
+            else if(button == 2){
+                housesSamurai();
+                state = "housesSamurai";
+            }
         }
         return false;
     }
