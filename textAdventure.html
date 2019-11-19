@@ -197,9 +197,8 @@
                 state = "introFarmer";
             }
         }
-        return false;
 
-        if(state == "introSamurai"){
+        else if(state == "introSamurai"){
             if (button == 1){
                 enterTown();
                 state = "enterTown";
@@ -208,6 +207,9 @@
                 additionalConfirmation();
                 state = "additionalConfirmation";
             }
+        }
+        else if (state == ""){
+            
         }
         return false;
     }
