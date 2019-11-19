@@ -127,6 +127,20 @@
         b4.style.display = "none";        
     }
 
+    function gameOver(){
+         pic.src = "images/death.jpg";
+        ptext1.innerHTML = "Game Over";
+        ptext2.innerHTML = "";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Click to restart";
+        b2.innerHTML = "";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";        
+    }
+
     function introSamurai(){
         pic.src = "images/samurai.jpg";
         ptext1.innerHTML = "Your name is Joe, an unemployed citizen living in the streets of a town in feudal Japan. The town you live in is a small village surrounded by forest, with the Emperor’s palace just beyond the mountains. There is a small town square and marketplace on the right side of the town, with the left side littered with small homes for peasants and merchants and such."; 
@@ -249,11 +263,12 @@
         ptext2.innerHTML = "What do you do?";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "yes";
-        b2.innerHTML = "no";
+        b1.innerHTML = "Search him";
+        b2.innerHTML = "Bribe him with a cut of the bounty";
+        b3.innerHTML = "Kill him with your sword";
         b1.style.display = "block";
         b2.style.display = "block";
-        b3.style.display = "none";
+        b3.style.display = "block";
         b4.style.display = "none";
     }
 
@@ -273,18 +288,62 @@
 
     function housesSamurai(){
         pic.src = "images/houses.jpg";
-        ptext1.innerHTML = "There is a series of houses";
-        ptext2.innerHTML = "";
+        ptext1.innerHTML = "There is a series of houses. You overhear a group of merchants gossiping about mysterious events that could be connected to the location of Boomer Gang's hideout.";
+        ptext2.innerHTML = "Which rumor should you look into?";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
-        b1.innerHTML = "";
-        b2.innerHTML = "";
-        b3.innerHTML = "";
+        b1.innerHTML = "mountains";
+        b2.innerHTML = "abandoned temple";
+        b3.innerHTML = "forest";
         b1.style.display = "block";
         b2.style.display = "block";
         b3.style.display = "block";
         b4.style.display = "none";
     }
+
+    function housesEmblemSamurai(){
+     pic.src = "images/houses.jpg";
+        ptext1.innerHTML = "You acquired a sigil of some sort from the shady man, maybe it will be useful later. There is a series of houses. You overhear a group of merchants gossiping about mysterious events that could be connected to the location of Boomer Gang's hideout.";
+        ptext2.innerHTML = "Which rumor should you look into?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "mountains";
+        b2.innerHTML = "abandoned temple";
+        b3.innerHTML = "forest";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+    }
+
+    function forestSamurai(){
+
+    }
+
+    function forestEmblemSamurai(){
+
+    }
+
+    function forestEmblemKeySamurai(){
+        
+    }
+
+    function mountainsSamurai(){
+
+    }
+
+    function templeSamurai(){
+
+    }
+    function templeEmblemSamurai(){
+
+    }
+
+    function housesEmblemKeySamurai(){
+
+    }
+
+
 
     //state machine
     function bclick(button){
@@ -298,7 +357,6 @@
                 state = "introFarmer";
             }
         }
-
         else if(state == "introSamurai"){
             if (button == 1){
                 entertownSamurai();
@@ -337,6 +395,27 @@
             else if(button == 2){
                 housesSamurai();
                 state = "housesSamurai";
+            }
+        }
+
+        else if (state == "townsquareSamurai"){
+            if (button == 1){
+                housesEmblemSamurai();
+                state = "housesEmblemSamurai";
+            }
+            else if(button == 2){
+                forestSamurai();
+                state = "forestSamurai";
+            }
+            else if (button == 3){
+                gameOver();
+                state = "gameOver";
+            }
+        }
+        if(state == "gameOver"){
+            if(button == 1){
+                intro();
+                state = "intro";
             }
         }
         return false;
