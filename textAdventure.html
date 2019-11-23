@@ -929,7 +929,7 @@
 
     function merchantsSamurai(){
          pic.src = "images/wagon.jpg";
-        ptext1.innerHTML = "The merchants thank you for your help and give you a key";
+        ptext1.innerHTML = "The merchants thank you for your help";
         ptext2.innerHTML = "";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -989,7 +989,7 @@
 
     function mountainsEmblemSamurai(){
                  pic.src = "images/mountains.jpg";
-        ptext1.innerHTML = "You arrive in the mountains and see a grooup of merchants being attacked by wolves.";
+        ptext1.innerHTML = "You arrive in the mountains and see a group of merchants being attacked by wolves.";
         ptext2.innerHTML = "What do you do?";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -1003,7 +1003,7 @@
     }
     function mountainsKeySamurai(){
                  pic.src = "images/mountains.jpg";
-        ptext1.innerHTML = "You arrive in the mountains and see a grooup of merchants being attacked by wolves.";
+        ptext1.innerHTML = "You arrive in the mountains and see a group of merchants being attacked by wolves.";
         ptext2.innerHTML = "What do you do?";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -1018,7 +1018,7 @@
 
     function mountainsEmblemKeySamurai(){
                  pic.src = "images/mountains.jpg";
-        ptext1.innerHTML = "You arrive in the mountains and see a grooup of merchants being attacked by wolves.";
+        ptext1.innerHTML = "You arrive in the mountains and see a group of merchants being attacked by wolves.";
         ptext2.innerHTML = "What do you do?";
         ptext3.innerHTML = "";
         ptext4.innerHTML = "";
@@ -1115,8 +1115,8 @@
 
         else if (state == "townsquareSamurai"){
             if (button == 1){
-                housesEmblemSamurai();
-                state = "housesEmblemSamurai";
+                housesSamurai();
+                state = "housesSamurai";
             }
             else if(button == 2){
                 forestSamurai();
@@ -1125,6 +1125,66 @@
             else if (button == 3){
                 gameOver();
                 state = "gameOver";
+            }
+        }
+
+        else if (state == "housesSamurai"){
+            if (button == 1){
+                mountainsSamurai();
+                state = "mountainsSamurai";
+            }
+            else if (button == 2){
+                templeSamurai();
+                state = "templeSamurai";
+            }
+            else if (button == 3){
+                forestSamurai()
+                state == "forestSamurai";
+            }
+        }
+
+        else if (state == "mountainsSamurai"){
+            if (button == 1){
+                merchantsSamurai();
+                state == "merchantsSamurai";
+            }
+            if (button == 2){
+                gameOver();
+                state == "gameOver";
+            }
+            if (button == 3){
+                forestEmblemSamurai();
+                state == "forestSamurai";
+            }
+        }
+
+        else if (state == "templeSamurai"){
+            if (button == 1){
+                gameOver();
+                state == "gameOver";
+            }
+            if (button == 2){
+                gameOver();
+                state == "gameOver";
+            }
+            if (button == 3){
+                gameOver();
+                state == "gameOver";
+            }
+
+        }
+
+        if (state == "forestSamurai"){
+            if (button == 1){
+                hideoutSamurai();
+                state == "hideoutSamurai";
+            }
+        }
+
+        if (state == "merchantsSamurai"){
+            if(button == 1){
+                forestSamurai();
+                state == "forestSamurai";
             }
         }
         if(state == "gameOver"){
